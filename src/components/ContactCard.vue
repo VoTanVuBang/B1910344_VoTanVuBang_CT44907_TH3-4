@@ -25,7 +25,7 @@
         </div>
         <div class="p-1">
             <strong>Điện thoại:</strong>
-            {{ contact.name}}
+            {{ contact.phone}}
         </div>
         <div class="p-1">
             <strong>Liên hệ yêu thích:&nbsp;</strong>
