@@ -60,7 +60,7 @@
         </div>
 
         <div class="form-group">
-          <button class="btn btn-primary">Lưu</button>
+          <button class="btn btn-primary" @click="submitContact">Lưu</button>
           <button
             v-if="contactLocal._id"
             type="button"
@@ -108,10 +108,15 @@ export default {
         return{
             // Chúng tôi sẽ không muốn hiệu chỉnh props, nên tạo biến cục bộ
             // contactLocal để liên kết với cái input trên form
-            contactLocal: this.contact,
+            contactLocal: this.contact ? this.contact : {
+            name: "",
+            email: "",
+            address: "",
+            phone:"",
             contactFormSchema,
-        };
-    },
+        },
+    };
+  },
     methods: {
         submitContact(){
             this.$emit("submit:contact", this.contactLocal);
